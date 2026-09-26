@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kohinoor Desert Camp | Sam Sand Dunes, Jaisalmer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sand: #f5d28a;
+      --gold: #e5a928;
+      --deep: #170b09;
+      --brown: #3b1810;
+      --cream: #fff8e8;
+      --muted: #756558;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(44, 18, 8, .16);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--deep);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .topbar {
+      background: var(--deep);
+      color: #ffe6ad;
+      padding: 9px 6%;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+
+    .navbar {
+      position: absolute;
+      top: 42px;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      padding: 20px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Cinzel, serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+
+    .logo-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--deep);
+      background: linear-gradient(145deg, #ffe9a6, #c98218);
+      font-size: 21px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: .3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--sand);
+    }
+
+    .nav-btn,
+    .primary-btn {
+      background: linear-gradient(135deg, #f5cf72, #d88913);
+      color: var(--deep);
+      font-weight: 800;
+      border-radius: 100px;
+      padding: 13px 21px;
+      border: 0;
+      cursor: pointer;
+      display: inline-block;
+      transition: .3s ease;
+      box-shadow: 0 8px 20px rgba(197, 126, 14, .22);
+    }
+
+    .nav-btn:hover,
+    .primary-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(197, 126, 14, .38);
+    }
+
+    .hero {
+      min-height: 790px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(20, 8, 5, .85) 0%, rgba(20, 8, 5, .48) 48%, rgba(20, 8, 5, .22) 100%),
+        url("image.jpg") center/cover no-repeat;
+      color: #fff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      background: linear-gradient(transparent, var(--cream));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 730px;
+      padding: 100px 6% 60px;
+    }
+
+    .eyebrow {
+      color: var(--sand);
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 19px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: Cinzel, serif;
+      font-size: clamp(42px, 7vw, 82px);
+      line-height: 1.04;
+      margin-bottom: 25px;
+      letter-spacing: -2px;
+    }
+
+    h1 span {
+      color: var(--sand);
+    }
+
+    .hero-content p {
+      max-width: 590px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #fff4db;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .outline-btn {
+      border: 1px solid rgba(255,255,255,.7);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 100px;
+      transition: .3s;
+      font-weight: 700;
+    }
+
+    .outline-btn:hover {
+      background: #fff;
+      color: var(--deep);
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 15px;
+      margin-top: 47px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.25);
+      backdrop-filter: blur(8px);
+      padding: 12px 15px;
+      border-radius: 12px;
+      font-size: 13px;
+    }
+
+    .section {
+      padding: 90px 6%;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading .eyebrow {
+      color: #b16b13;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: Cinzel, serif;
+      font-size: clamp(31px, 4vw, 49px);
+      line-height: 1.15;
+      color: var(--brown);
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .intro-image {
+      height: 490px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .intro-image img {
+      height: 100%;
+    }
+
+    .intro-card {
+      position: absolute;
+      bottom: 22px;
+      left: 22px;
+      right: 22px;
+      background: rgba(255, 248, 232, .93);
+      padding: 17px 20px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .intro-card strong {
+      display: block;
+      font-family: Cinzel, serif;
+      color: var(--brown);
+    }
+
+    .intro-card small {
+      color: var(--muted);
+    }
+
+    .intro-copy .eyebrow {
+      color: #b16b13;
+    }
+
+    .intro-copy h2 {
+      text-align: left;
+    }
+
+    .intro-copy p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 17px;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+      margin: 28px 0;
+    }
+
+    .feature-list li {
+      color: var(--brown);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .feature-list li::before {
+      content: "✦";
+      color: var(--gold);
+      margin-right: 8px;
+    }
+
+    .activities {
+      background: #fff2d2;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .activity-card {
+      background: var(--white);
+      border-radius: 19px;
+      padding: 27px;
+      border: 1px solid rgba(178, 110, 19, .12);
+      transition: .3s ease;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .activity-icon {
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      background: #fff1c9;
+      border-radius: 15px;
+      font-size: 26px;
+      margin-bottom: 19px;
+    }
+
+    .activity-card h3 {
+      font-family: Cinzel, serif;
+      color: var(--brown);
+      margin-bottom: 10px;
+      font-size: 19px;
+    }
+
+    .activity-card p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .booking {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(105deg, rgba(37, 12, 7, .96), rgba(92, 36, 13, .85)),
+        url("image.jpg") center/cover;
+      color: white;
+    }
+
+    .booking-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .booking h2 {
+      color: white;
+    }
+
+    .booking p {
+      color: #f7dfb5;
+      line-height: 1.7;
+    }
+
+    .contact-details {
+      margin-top: 27px;
+      display: grid;
+      gap: 13px;
+      color: #ffe9bc;
+      font-size: 15px;
+    }
+
+    .booking-form {
+      background: rgba(255,255,255,.97);
+      padding: 29px;
+      border-radius: 22px;
+      color: var(--deep);
+      box-shadow: var(--shadow);
+    }
+
+    .booking-form h3 {
+      color: var(--brown);
+      font-family: Cinzel, serif;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 13px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #eadbc0;
+      padding: 13px 14px;
+      border-radius: 10px;
+      outline: none;
+      background: #fffdf8;
+      font: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .booking-form button {
+      width: 100%;
+      margin-top: 7px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr .7fr;
+      grid-template-rows: 230px 230px;
+      gap: 15px;
+    }
+
+    .gallery div {
+      border-radius: 17px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery div:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery img {
+      height: 100%;
+      transition: .4s;
+    }
+
+    .gallery div:hover img {
+      transform: scale(1.08);
+    }
+
+    .testimonial {
+      background: #fff2d2;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .review-card {
+      background: #fff;
+      padding: 27px;
+      border-radius: 18px;
+      box-shadow: 0 9px 25px rgba(68, 35, 11, .07);
+    }
+
+    .stars {
+      color: #e49a16;
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .review-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .review-card strong {
+      color: var(--brown);
+    }
+
+    footer {
+      background: var(--deep);
+      color: #f7ddb0;
+      padding: 52px 6% 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 35px;
+    }
+
+    footer h3 {
+      color: #fff0c8;
+      margin-bottom: 15px;
+      font-family: Cinzel, serif;
+    }
+
+    footer p,
+    footer a {
+      color: #cba978;
+      line-height: 1.8;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      text-align: center;
+      color: #a78453;
+      font-size: 12px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      z-index: 30;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 29px;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, .42);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 730px;
+      }
+
+      .intro,
+      .booking-content {
+        grid-template-columns: 1fr;
+      }
+
+      .activity-grid,
+      .review-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        justify-content: center;
+        text-align: center;
+        font-size: 11px;
+      }
+
+      .navbar {
+        top: 58px;
+        padding: 17px 5%;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      .logo-icon {
+        width: 35px;
+        height: 35px;
+      }
+
+      .nav-btn {
+        padding: 10px 14px;
+        font-size: 12px;
+      }
+
+      .hero-content {
+        padding: 115px 5% 60px;
+      }
+
+      h1 {
+        font-size: 43px;
+      }
+
+      .hero-content p {
+        font-size: 15px;
+      }
+
+      .section {
+        padding: 65px 5%;
+      }
+
+      .intro-image {
+        height: 360px;
+      }
+
+      .feature-list,
+      .activity-grid,
+      .review-grid,
+      .footer-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 150px 150px;
+      }
+
+      .gallery div:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+
+      .booking-content {
+        gap: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <span>📍 Sam Sand Dunes, Jaisalmer, Rajasthan</span>
+    <span>📞 +91 9649650936 &nbsp; | &nbsp; ✉ kohinoordesertcampsam@gmail.com</span>
+  </div>
+
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">✦</span>
+      <span>KOHINOOR<br><small>DESERT CAMP</small></span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#booking" class="nav-btn">Book Your Stay</a>
+    </div>
+
+    <a href="#booking" class="nav-btn mobile-book">Book Now</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">A royal night beneath the stars</div>
+
+      <h1>Where the <span>desert</span><br>tells its story.</h1>
+
+      <p>
+        Experience the magic of Rajasthan at Kohinoor Desert Camp —
+        luxury tents, golden dunes, folk music, bonfire evenings and
+        unforgettable desert adventures at Sam.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#booking" class="primary-btn">Plan Your Desert Escape →</a>
+        <a href="#experiences" class="outline-btn">Explore Experiences</a>
+      </div>
+
+      <div class="hero-badges">
+        <div class="badge">☽ Luxury Stay</div>
+        <div class="badge">♨ Cultural Evenings</div>
+        <div class="badge">🐪 Desert Safari</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section" id="about">
+      <div class="intro">
+        <div class="intro-image">
+          <img src="image.jpg" alt="Kohinoor Desert Camp Sam Jaisalmer">
+          <div class="intro-card">
+            <div>
+              <strong>Live the Thar</strong>
+              <small>Tradition, comfort & adventure</small>
+            </div>
+            <span>✦</span>
+          </div>
+        </div>
+
+        <div class="intro-copy">
+          <div class="eyebrow">Welcome to Kohinoor</div>
+          <h2>More than a stay.<br>A royal desert story.</h2>
+
+          <p>
+            At Kohinoor Desert Camp, every sunset becomes a memory.
+            Wake up surrounded by golden sand dunes, enjoy warm Rajasthani
+            hospitality and discover the vibrant soul of the Thar Desert.
+          </p>
+
+          <p>
+            From an exciting jeep safari to peaceful camel rides and
+            traditional Kalbelia performances, your desert journey is
+            designed to be truly unforgettable.
+          </p>
+
+          <ul class="feature-list">
+            <li>Premium Swiss tents</li>
+            <li>Authentic Rajasthani cuisine</li>
+            <li>Sunset dune experience</li>
+            <li>Folk music & dance</li>
+          </ul>
+
+          <a href="#booking" class="primary-btn">Discover Your Stay →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section activities" id="experiences">
+      <div class="section-heading">
+        <div class="eyebrow">The Kohinoor Experience</div>
+        <h2>Moments made for memories</h2>
+        <p>
+          Choose your perfect mix of adventure, culture, food and relaxation
+          in the heart of the Thar Desert.
+        </p>
+      </div>
+
+      <div class="activity-grid">
+        <div class="activity-card">
+          <div class="activity-icon">🐪</div>
+          <h3>Camel Safari</h3>
+          <p>Ride across the golden dunes and enjoy the timeless rhythm of the desert.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-icon">🚙</div>
+          <h3>Jeep Safari</h3>
+          <p>Feel the thrill of a dune-bashing adventure with beautiful sunset views.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-icon">💃</div>
+          <h3>Cultural Show</h3>
+          <p>Enjoy vibrant folk dance, live music and stories from Rajasthan.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-icon">🔥</div>
+          <h3>Bonfire Nights</h3>
+          <p>Gather around the fire under a sky full of stars and desert silence.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-icon">🍽️</div>
+          <h3>Royal Dinner</h3>
+          <p>Taste authentic Rajasthani flavours served with traditional warmth.</p>
+        </div>
+
+        <div class="activity-card">
+          <div class="activity-icon">🌌</div>
+          <h3>Night Under Stars</h3>
+          <p>Relax in a comfortable desert camp and wake up to a peaceful sunrise.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking" id="booking">
+      <div class="booking-content">
+        <div>
+          <div class="eyebrow">Your desert escape begins here</div>
+          <h2>Let the dunes<br>call you home.</h2>
+          <p>
+            Share your travel details and our team will contact you shortly
+            with the best available package for your desert stay.
+          </p>
+
+          <div class="contact-details">
+            <span>📞 +91 9649650936</span>
+            <span>✉ kohinoordesertcampsam@gmail.com</span>
+            <span>📍 Near Sam Sand Dunes, Jaisalmer</span>
+          </div>
+        </div>
+
+        <form class="booking-form" onsubmit="sendBooking(event)">
+          <h3>Plan Your Stay</h3>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>YOUR NAME</label>
+              <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+              <label>PHONE NUMBER</label>
+              <input type="tel" id="phone" placeholder="Enter phone number" required>
+            </div>
+
+            <div class="form-group">
+              <label>CHECK-IN</label>
+              <input type="date" id="checkin" required>
+            </div>
+
+            <div class="form-group">
+              <label>CHECK-OUT</label>
+              <input type="date" id="checkout" required>
+            </div>
+
+            <div class="form-group">
+              <label>GUESTS</label>
+              <select id="guests">
+                <option>1–2 Guests</option>
+                <option>3–5 Guests</option>
+                <option>6–10 Guests</option>
+                <option>10+ Guests</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>PACKAGE</label>
+              <select id="package">
+                <option>Luxury Camp Stay</option>
+                <option>Jeep Safari</option>
+                <option>Camel Safari</option>
+                <option>Complete Desert Package</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label>MESSAGE</label>
+              <textarea id="message" rows="3" placeholder="Tell us about your travel plan"></textarea>
+            </div>
+          </div>
+
+          <button class="primary-btn" type="submit">Send Booking Enquiry on WhatsApp →</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="section-heading">
+        <div class="eyebrow">Captured in the Thar</div>
+        <h2>A glimpse of your journey</h2>
+        <p>Golden landscapes, colourful traditions and evenings you will remember forever.</p>
+      </div>
+
+      <div class="gallery">
+        <div><img src="image.jpg" alt="Desert camp sunset"></div>
+        <div><img src="image.jpg" alt="Camel safari"></div>
+        <div><img src="image.jpg" alt="Luxury desert camp"></div>
+        <div><img src="image.jpg" alt="Rajasthani cultural show"></div>
+        <div><img src="image.jpg" alt="Bonfire night"></div>
+      </div>
+    </section>
+
+    <section class="section testimonial" id="reviews">
+      <div class="section-heading">
+        <div class="eyebrow">Guest stories</div>
+        <h2>What our guests say</h2>
+      </div>
+
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            “A beautiful experience from arrival to departure. The cultural
+            programme, dinner and desert safari were wonderful.”
+          </p>
+          <strong>— A Happy Traveller</strong>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            “The perfect place to enjoy the real beauty of Jaisalmer.
+            Friendly team and an unforgettable sunset.”
+          </p>
+          <strong>— Desert Explorer</strong>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            “The camp atmosphere was magical. Highly recommended for families,
+            couples and groups visiting Sam Sand Dunes.”
+          </p>
+          <strong>— Rajasthan Visitor</strong>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo">
+          <span class="logo-icon">✦</span>
+          <span>KOHINOOR<br><small>DESERT CAMP</small></span>
+        </a>
+        <p style="margin-top: 18px;">
+          Your royal gateway to the golden sands of Sam, Jaisalmer.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#about">About Us</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Book Your Stay</a>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>Sam Sand Dunes, Jaisalmer<br>Rajasthan, India – 345001</p>
+        <p style="margin-top: 9px;">+91 9649650936</p>
+        <p>kohinoordesertcampsam@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Kohinoor Desert Camp. Crafted with the spirit of Rajasthan.
+    </div>
+  </footer>
+
+  <a class="floating-whatsapp"
+     href="https://wa.me/919649650936"
+     target="_blank"
+     aria-label="WhatsApp Booking">◉</a>
+
+  <script>
+    function sendBooking(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+      const guests = document.getElementById("guests").value;
+      const packageName = document.getElementById("package").value;
+      const message = document.getElementById("message").value;
+
+      const whatsappMessage =
+`Hello Kohinoor Desert Camp,
+
+I want to enquire about a booking.
+
+Name: ${name}
+Phone: ${phone}
+Check-in: ${checkin}
+Check-out: ${checkout}
+Guests: ${guests}
+Package: ${packageName}
+Message: ${message || "Not specified"}
+
+Please share the available price and details. Thank you.`;
+
+      const whatsappURL =
+        "https://wa.me/919649650936?text=" +
+        encodeURIComponent(whatsappMessage);
+
+      window.open(whatsappURL, "_blank");
+    }
+  </script>
+
+</body>
+</html>
